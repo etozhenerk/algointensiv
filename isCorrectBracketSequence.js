@@ -1,5 +1,5 @@
 /**
- * @param {string} sequence массив скобок
+ * @param {string} sequence скобочная последовательность
  * @returns {boolean} определить правильная последовательность или нет
  */
 
