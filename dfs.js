@@ -11,21 +11,25 @@
  */
 
 const dfs = (tree) => {
-  const stack = [tree.right, tree.left];
-  const ans = [tree.val];
+  if (tree) {
+    const stack = [tree.right, tree.left];
+    const ans = [tree.val];
 
-  while (stack.length) {
-    const node = stack.pop();
-    if (node) {
-      ans.push(node.val);
-      if (node.right) {
-        stack.push(node.right);
-      }
-      if (node.left) {
-        stack.push(node.left);
+    while (stack.length) {
+      const node = stack.pop();
+      if (node) {
+        ans.push(node.val);
+        if (node.right) {
+          stack.push(node.right);
+        }
+        if (node.left) {
+          stack.push(node.left);
+        }
       }
     }
+
+    return ans;
   }
 
-  return ans;
+  return [];
 };
