@@ -8,15 +8,13 @@ const binSearch = (arr, value) => {
   let l = 0;
   let r = arr.length - 1;
 
-  for (let i = 0; i < arr.length; i++) {
-    while (l < r) {
-      let m = Math.floor((l + r) / 2);
+  while (l < r) {
+    let m = Math.floor((l + r) / 2);
 
-      if (arr[m] >= value) {
-        r = m;
-      } else {
-        l = m + 1;
-      }
+    if (arr[m] >= value) {
+      r = m;
+    } else {
+      l = m + 1;
     }
   }
 
@@ -24,3 +22,5 @@ const binSearch = (arr, value) => {
     return l;
   }
 };
+
+console.log(binSearch([0, 100, 200, 300, 400, 500], 500));
