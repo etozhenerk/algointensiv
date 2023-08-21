@@ -12,19 +12,25 @@
 
 const bfs = (tree) => {
   if (tree) {
-    const queue = [tree.left, tree.right];
+    const queue = [];
     const ans = [tree.val];
+
+    if (tree.left) {
+      queue.push(tree.left);
+    }
+
+    if (tree.right) {
+      queue.push(tree.right);
+    }
 
     while (queue.length) {
       const node = queue.shift();
-      if (node) {
-        ans.push(node.val);
-        if (node.left) {
-          queue.push(node.left);
-        }
-        if (node.right) {
-          queue.push(node.right);
-        }
+      ans.push(node.val);
+      if (node.left) {
+        queue.push(node.left);
+      }
+      if (node.right) {
+        queue.push(node.right);
       }
     }
 
