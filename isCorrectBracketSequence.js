@@ -21,9 +21,6 @@ const isCorrectBracketSequence = (sequence) => {
       stack.push(sequence[i]);
     }
   }
-  if (stack.length === 0) {
-    return true;
-  } else {
-    return false;
-  }
+
+  return stack.length === 0;
 };
